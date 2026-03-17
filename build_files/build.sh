@@ -13,7 +13,7 @@ set -ouex pipefail
 dnf5 install -y tmux 
 
 # Install packages for patched kernel w/ DisplayPort audio fix
-dnf install -y $(find /ctx/local-rpms -name "*.rpm") --allowerase
+rpm -Uvh --force $(find /ctx/local-rpms -name "*.rpm")
 
 # Cleanup
 # rm -rf /ctx/local-rpms
