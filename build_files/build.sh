@@ -14,7 +14,7 @@ dnf5 install -y tmux
 
 
 # Install packages for patched kernel w/ DisplayPort audio fix
-dnf reinstall $(find /ctx/local-rpms -name "*.rpm")
+dnf5 reinstall -y $(find /ctx/local-rpms -name "*.rpm")
 #rpm -Ivh --force $(find /ctx/local-rpms -name "*.rpm")
 
 # Cleanup
