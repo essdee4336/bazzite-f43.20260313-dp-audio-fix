@@ -13,7 +13,8 @@ set -ouex pipefail
 dnf5 install -y tmux 
 
 # Install packages for patched kernel w/ DisplayPort audio fix
-ls
+echo "ctx dir from build.sh"
+ls /ctx
 dnf install -y $(find /tmp/local-rpms -name "*.rpm")
 
 # Cleanup
