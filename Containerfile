@@ -36,8 +36,8 @@ COPY local-rpms /tmp/local-rpms
 RUN echo "root listing"
 RUN ls
 
-RUN echo "ctx listing"
-RUN ls /ctx
+#RUN echo "ctx listing"
+#RUN ls /ctx
 
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
