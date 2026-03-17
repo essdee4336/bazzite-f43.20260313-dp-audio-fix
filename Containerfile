@@ -31,6 +31,8 @@ FROM ghcr.io/ublue-os/bazzite:stable
 
 # Copy packages for patched kernel w/ DisplayPort audio fix
 COPY local-rpms /tmp/local-rpms
+# Patched kernel with DP audio fix
+ls
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
