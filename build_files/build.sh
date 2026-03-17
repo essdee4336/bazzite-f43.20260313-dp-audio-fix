@@ -12,6 +12,12 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 
+# Install packages for patched kernel w/ DisplayPort audio fix
+dnf install -y /tmp/local-rpms/*.rpm
+
+# Cleanup
+rm -rf /tmp/local-rpms
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
