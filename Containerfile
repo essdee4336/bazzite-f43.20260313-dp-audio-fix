@@ -30,19 +30,21 @@ FROM ghcr.io/ublue-os/bazzite:stable
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 # Copy packages for patched kernel w/ DisplayPort audio fix
+
 COPY local-rpms /tmp/local-rpms
+
 RUN echo "root listing"
 RUN ls
+
+RUN echo "ctx listing"
+RUN ls /ctx
+
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    --mount=type=tmpfs,dst=/tmp \
-    echo "current dir listing" \
-	ls \
-	echo "ctx listing" \
-	ls /ctx \
-    /ctx/build.sh
+#    --mount=type=tmpfs,dst=/tmp \
+     /ctx/build.sh
     
 ### LINTING
 ## Verify final image and contents are correct.

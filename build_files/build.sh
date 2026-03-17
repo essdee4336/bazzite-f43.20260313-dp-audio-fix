@@ -18,7 +18,7 @@ ls /ctx
 dnf install -y $(find /tmp/local-rpms -name "*.rpm")
 
 # Cleanup
-rm -rf /tmp/local-rpms
+#rm -rf /ctx/local-rpms
 
 # Use a COPR Example:
 #
